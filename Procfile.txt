@@ -1,2 +1,2 @@
 python manage.py collectstatic --noinput;
-web: gunicorn Richard.wsgi --log-file -
+web: gunicorn richardwu5.wsgi --log-file -
