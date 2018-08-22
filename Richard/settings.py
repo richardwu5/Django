@@ -25,7 +25,7 @@ SECRET_KEY = '^b&e3wcs-yw)*topnj0vhtyh6s6&--1-s8ypbeamwbj$w-3lf('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://richardwu5.herokuapp.com/', 'https://www.richard-wu.com']
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
