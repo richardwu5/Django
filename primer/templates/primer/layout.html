@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Menu - A Sports and Media Primer</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{% static 'primer/css/style.css' %}">
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Contrail+One" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<a class="navbar-brand" href="#"><img src="{% static 'primer/assets/' %}TheMenu.png" alt="The Menu" height="20px" width="auto"></a>
+	<div class="dropdown">
+  		<button class="dropbtn">Week</button>
+  		<div class="dropdown-content">
+    		<a href="{% url 'primer:primer' week=1 %}">Week 1</a>
+    		<a href="{% url 'primer:primer' week=2 %}">Week 2</a>
+    		<a href="{% url 'primer:primer' week=3 %}">Week 3</a>
+  		</div>
+  		<div class="carousel">
+  			<p>UPCOMING FILMS:</p>
+  		</div>
+  		<div class="carousel">
+  			<p>The Predator, September 14</p>
+  		</div>
+  		<div class="carousel">
+  			<p>Robin Hood, September 21</p>
+  		</div>
+  		<div class="carousel">
+  			<p>Venom, October 5</p>
+  		</div>
+  		<div class="carousel">
+  			<p>Overlord, October 26</p>
+  		</div>
+	</div>
+
+	<div id="sports">
+		<div class="container">	
+			<h2>Sports</h2>
+			<table class="table" style="width:100%">
+	{% block sports %}
+	{% endblock %}
+			</table>
+		</div>
+	</div>
+
+	<div id="media">
+		<div class="container">	
+			<h2>Media</h2>
+	{% block media %}
+	{% endblock %}
+		</div>
+	</div>
+
+	<div id="comments">
+		<div class="container">	
+			<h2>Comments</h2>
+	{% block comments %}
+	{% endblock %}
+		</div>
+	</div>
+
+	<script src="{% static 'primer/javascript/primer.js' %}"></script>
+</body>
+</html>

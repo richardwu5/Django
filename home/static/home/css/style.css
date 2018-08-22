@@ -1,0 +1,110 @@
+#header {
+	background: linear-gradient(
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.4)), 
+		url(https://images.unsplash.com/photo-1422217604777-710d38a8d846?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1ff8019d94865be90c05a019496e31a0&auto=format&fit=crop&w=1778&q=80);
+	background-size: cover;
+	background-position: center;
+	width: 100%;
+	height: 600px;
+}
+
+.navbar-light .navbar-brand {
+    color: white;
+    font-family: Lato;
+    font-size: 2em;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+				 0px 8px 13px rgba(0,0,0,0.1);
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+    font-family: Lato;
+    font-size: 1.5em;
+}
+
+.navbar-light .navbar-brand:hover { 
+    color: #dfe6e9;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #dfe6e9;
+}
+
+.img-thumbnail {
+	margin-bottom: 30px;
+	width: 350px;
+	height: 250px;
+}
+
+h1 {
+	font-size: 3em;
+	letter-spacing: 0.1em;
+}
+
+h2 {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+#portfolio {
+	background: #dfe6e9;
+	width: 100%;
+	padding: 40px 0;
+	font-family: Lato;
+}
+
+#about {
+	background: #6699cc;
+	width: 100%;
+	padding: 40px 0;
+	font-family: Lato;
+	height: 300px;
+}
+
+#experience {
+	font-family: Lato;
+	padding: 40px 0;
+}
+
+#experience img {
+	height: 100px;
+	width: 100px;
+}
+
+.job_description {
+	line-height: 10px;
+	margin-top: 15px;
+}
+
+
+#contact {
+	background: black;
+	width: 100%;
+	height: 100px;
+	text-align: center;
+}
+
+hr.style-two {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+hr.style-four {
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+}
+
+#experience .fa {
+	color: grey;
+	margin-right: 10px;
+}
+
+#contact .fa {
+	color: grey;
+    padding: 20px;
+    font-size: 30px;
+    width: 30px;
+}

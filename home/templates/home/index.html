@@ -1,0 +1,158 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Richard Wu</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Marvel:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,700,900" rel="stylesheet">
+	<script src="https://use.fontawesome.com/2fe2215aec.js"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'home/css/style.css' %}">
+</head>
+<body>
+
+	<div id="header">
+		<nav class="navbar navbar-expand-sm navbar-light bg-transparent">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">Richard Wu</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-nav-demo" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				    	<span class="navbar-toggler-icon"></span>
+			        </button>
+				</div>
+
+		        <div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav mr-lg">
+						<li><a class="nav-link" href="#portfolio">Portfolio</a></li>
+						<li><a class="nav-link" href="#about">About Me</a></li>						
+						<li><a class="nav-link" href="#experience">Experience</a></li>
+						<li><a class="nav-link" href="#contact">Contact</a></li>			
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+
+	<div id="portfolio">
+		<div class="container">	
+			<h2>Portfolio</h2>
+			<div class="row">
+				<div class="col-lg-4 col-sm-6"><a href="{% url 'pizza:pizza' %}"><img src="https://images.unsplash.com/photo-1508052075306-c62ccf5469da?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=56e3983c5645ef6df63abd9846141094&auto=format&fit=crop&w=1950&q=80" class="img-thumbnail"></a></div>
+				<div class="col-lg-4 col-sm-6"><a href="{% url 'primer:primer' week=1%}"><img src="{% static 'home/assets/' %}rosebowl.jpg" alt="calculator" class="img-thumbnail"></a></div>				
+				<div class="col-lg-4 col-sm-6"><a href="patatap/"><img src="http://www.richard-wu.com/lib/assets/patatap.png" alt="patatap" class="img-thumbnail"></a></div>
+
+			</div>
+		</div>
+	</div>
+
+	<div id="about">
+		<div class="container">
+			<h2>About Me</h2>
+			<p>Enter some info here</p>
+		</div>
+	</div>
+
+	<div id="experience">
+		<div class="container">	
+			<h2>Current Experience</h2>
+			<div class="row">
+				<div class="col-lg-3"><img src="https://pbs.twimg.com/profile_images/581525389756866560/kou4IAlz.png"></div>
+				<div class="col-lg-9">
+					<div class="job_description"
+						<p><i class="fa fa-address-book" aria-hidden="true"></i> Product Manager at Tend</p>
+						<p><i class="fa fa-calendar" aria-hidden="true"></i> 2013 - PRESENT</p>
+						<p><i class="fa fa-location-arrow" aria-hidden="true"></i> Fremont, CA</p>
+					</div>
+					<ul>
+						<li>Consistently launched 2 consumer products annually with retail placement in Target, Sam’s Club, Ace Hardware, and Wal-Mart.</li>
+						<li>Conducted user interviews and competitive research to identify new customer pain points that we solve innovatively with computer vision, launching facial recognition and pet detection products.</li>
+						<li>Designed and tested wireframes to launch paid subscriptions and cancellation experience, achieving 10% conversion and increasing retention by 15%.</li>
+						<li>Led a team of 10+ co-located developers to analyze and re-design our live video streaming performance, decreasing video start time by 70%.</li>
+						<li>Spearheaded creation of a MySQL data warehouse to track user behavior and make better data-driven decisions.</li>
+						<li>Successfully transitioned the product design and development teams from B2B2C to B2C, with revenue doubling each year since the pivot.</li>
+					</ul>
+				</div>
+			</div>
+			<hr class="style-four">
+			<h2>Past Experience</h2>
+			<div class="row">
+				<div class="col-lg-3"><img src="https://botw-pd.s3.amazonaws.com/styles/logo-thumbnail/s3/0016/7073/brand.gif"></div>
+				<div class="col-lg-9">
+					<div class="job_description"
+						<p><i class="fa fa-address-book" aria-hidden="true"></i> Program Manager at Sandisk</p>
+						<p><i class="fa fa-calendar" aria-hidden="true"></i> 2010 - 2013</p>
+						<p><i class="fa fa-location-arrow" aria-hidden="true"></i> Milpitas, CA</p>
+					</div>
+					<ul>
+						<li>Led product development and managed cross-functional teams across 8 organizations to deliver on-time product launches for Nintendo and Sony, shipping 40M units and generated $210M in revenue.</li>
+						<li>Identified and managed product portfolios for a new enterprise SSD business, growing market share by 30% with strategic customers, Western Digital and Google.</li>
+						<li>Implemented go-to-market programs, including generation of product specifications, performance benchmarks, and sales materials.</li>	
+					</ul>
+				</div>
+			</div>
+			<hr class="style-two">
+			<div class="row">
+				<div class="col-lg-3"><img src="https://botw-pd.s3.amazonaws.com/styles/logo-thumbnail/s3/072012/micron_logo_rgb-converted.png"></div>
+				<div class="col-lg-9">
+					<div class="job_description"
+						<p><i class="fa fa-address-book" aria-hidden="true"></i> Design Engineer at Micron</p>
+						<p><i class="fa fa-calendar" aria-hidden="true"></i> 2005 - 2008</p>
+						<p><i class="fa fa-location-arrow" aria-hidden="true"></i> San Jose, CA</p>
+					</div>
+					<ul>
+						<li>Performed micro-architecture design, RTL coding, and design verification for ASICs in SD cards, USB drives, and SSD drives.</li>	
+					</ul>
+				</div>
+			</div>
+			<hr class="style-four">
+			<h2>Education</h2>
+			<div class="row">
+				<div class="col-lg-3"><img src="https://i.forbesimg.com/media/lists/colleges/university-of-southern-california/marshall-school-of-business_416x416.jpg"></div>
+				<div class="col-lg-9">
+					<div class="job_description"
+						<p><i class="fa fa-address-book" aria-hidden="true"></i> MBA from USC Marshall School of Business</p>
+						<p><i class="fa fa-calendar" aria-hidden="true"></i> 2008 - 2010</p>
+						<p><i class="fa fa-location-arrow" aria-hidden="true"></i> Los Angeles, CA</p>
+					</div>
+				</div>
+			</div>
+			<hr class="style-two">
+			<div class="row">
+				<div class="col-lg-3"><img src="http://brand.ucla.edu/wp-content/uploads/UCLA_WW_PRI_LOGO_ON_WHT-1200.jpg"></div>
+				<div class="col-lg-9">
+					<div class="job_description"
+						<p><i class="fa fa-address-book" aria-hidden="true"></i> MS, Electrical Engineering from UCLA</p>
+						<p><i class="fa fa-calendar" aria-hidden="true"></i> 2003 - 2004</p>
+						<p><i class="fa fa-location-arrow" aria-hidden="true"></i> Los Angeles, CA</p>
+					</div>
+				</div>
+			</div>
+			<hr class="style-two">
+			<div class="row">
+				<div class="col-lg-3"><img src="http://brand.ucla.edu/wp-content/uploads/UCLA_WW_PRI_LOGO_ON_WHT-1200.jpg"></div>
+				<div class="col-lg-9">
+					<div class="job_description"
+						<p><i class="fa fa-address-book" aria-hidden="true"></i> BS, Electrical Engineering and Computer Science from UCLA</p>
+						<p><i class="fa fa-calendar" aria-hidden="true"></i> 1999 - 2003</p>
+						<p><i class="fa fa-location-arrow" aria-hidden="true"></i> Los Angeles, CA</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="contact">
+		<div class="container">
+			<a href="https://www.linkedin.com/in/richard-wu-a89b66b"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+			<a href="mailto:richardwu5@gmail.com"><i class="fa fa-envelope-open-o" aria-hidden="true"></i></a>
+			<a href="https://github.com/richardwu5"><i class="fa fa-github" aria-hidden="true"></i></a>
+		</div>
+	</div>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
