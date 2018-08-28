@@ -100,11 +100,12 @@
 {% endblock %}
 
 {% block media %}
+{% if media %}
 <div class="row">
 	{% for item in media %}
 	<div class="col-lg-4 col-sm-6">
 		<div class="entry">
-			<img src="https://r.hswstatic.com/w_907/gif/Thanos-infinity-stone.jpg">
+			<img src="{% static 'primer/assets/' %}{{ item.entry_image }}">
 			<h3>{{ item.title }}</h3>
 			<p>{{ item.entry }}</p>
 			<div class="text-center hottake"><i class="fa fa-angle-down"></i></div>
@@ -113,6 +114,10 @@
 	</div>
 	{% endfor %}
 </div>
+{% else %}
+<h3><img id="yoda" src="{% static 'primer/assets/' %}yoda.png"></h3>
+<h4 style="text-align: center">Patience you must have, my young Padawan</h4>
+{% endif %}
 {% endblock %}
 
 {% block comments %}

@@ -112,6 +112,7 @@ h2 {
 	border-radius: .3rem;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
 	margin: 10px 0 0 0;
+	padding: 0 0 10px 0;
 }
 
 .entry h3 {
@@ -138,6 +139,13 @@ h2 {
 hr {
 	border-color: #6e7783 !important;
 	margin: 15px 20px;
+}
+
+#yoda {
+    display: block;
+    width: 50%;
+    height: 50%;
+    margin: auto;
 }
 
 /* Styling for Comments */
