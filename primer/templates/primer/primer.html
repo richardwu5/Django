@@ -2,6 +2,30 @@
 {% load static %}
 
 {% block sports %}
+{% if thugames %}
+<thead>
+	<td colspan="3">Thursday</td>
+</thead>
+<tbody>
+	{% for game in thugames %}
+	<tr>
+	    <td class="left">
+	    	<img class="logo" alt="{{ game.team1 }}" src="{% static 'primer/assets/' %}{{ game.team1image }}">
+	    	<span class="left">{{ game.team1 }}</span>
+	    </td>
+    	<td class="center">
+    		<img class="network" alt="CBSSN" src="{% static 'primer/assets/' %}{{ game.network_image }}">
+    		<p>{{ game.time }}</p>
+    	</td>
+    	<td class="right">
+    		<span class="right">{{ game.team2 }}</span>
+    		<img class="logo" alt="{{ game.team2 }}" src="{% static 'primer/assets/' %}{{ game.team2image }}">
+    	</td>
+	</tr>
+	{% endfor %}
+</tbody>
+{% endif %}
+
 {% if frigames %}	
 <thead>
 	<td colspan="3">Friday</td>
