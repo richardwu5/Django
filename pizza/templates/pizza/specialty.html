@@ -1,0 +1,26 @@
+{% extends "pizza/base.html" %}
+
+{% block body %}
+<div class="container">
+    <div class="panel panel-info">
+  		<div class="panel-heading"><h1>{{ name }}</h1></div>
+		    <div class="panel-body">
+                <form action="{% url 'pizza:specialty' name=name %}" method="post">
+	                {% csrf_token %}
+                    <div class="form-group">
+                        <label for="size">Select a Size</label>
+                        <select class="form-control" id="size">
+                            {% for i in prices %}
+                            <option>{{ i.size }} for ${{ i.price }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+	                <div class="form-group">
+		                <p align="right"><button class="btn btn-primary">Add to Cart</button></p>
+	                </div>
+                </form>
+            </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "pizza/base.html" %}
+
+{% block body %}
+<div class="container">
+    <div class="panel panel-info">
+  		<div class="panel-heading"><h1>Create Your Pizza</h1></div>
+		    <div class="panel-body">
+                <form action="{% url 'pizza:create' %}" method="post">
+	                {% csrf_token %}
+                    <div class="form-group">
+                        <label for="size">Select a Size</label>
+                        <select class="form-control" id="size">
+                            {% for i in prices %}
+                            <option>{{ i.size }} for ${{ i.price }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+	                <div class="form-group">
+		                <p align="right"><button class="btn btn-primary">Add to Cart</button></p>
+	                </div>
+                </form>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <h3>Meats</h3>
+                        {% for topping in meats %}
+                        <p>{{ topping.name }}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="col-lg-4">
+                        <h3>Vegetables</h3>
+                        {% for topping in veggies %}
+                        <p>{{ topping.name }}</p>
+                        {% endfor %}
+                    </div>
+                    <div class="col-lg-4">
+                        <h3>Other</h3>
+                        {% for topping in others %}
+                        <p>{{ topping.name }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+{% endblock %}
