@@ -1,26 +1,29 @@
 {% extends "pizza/base.html" %}
 
 {% block body %}
-<div class="container">
-    <div class="panel panel-info">
-  		<div class="panel-heading"><h1>{{ name }}</h1></div>
-		    <div class="panel-body">
-                <form action="{% url 'pizza:specialty' name=name %}" method="post">
-	                {% csrf_token %}
-                    <div class="form-group">
-                        <label for="size">Select a Size</label>
-                        <select class="form-control" id="size">
-                            {% for i in prices %}
-                            <option>{{ i.size }} for ${{ i.price }}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-	                <div class="form-group">
-		                <p align="right"><button class="btn btn-primary">Add to Cart</button></p>
-	                </div>
-                </form>
+<div class="specialtypizza">
+    <h1>{{ name }}</h1>
+        <form action="{% url 'pizza:pizza' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="pk" value="{{ pk }}"/>
+            <input type="hidden" name="category" value="{{ category }}"/>
+            <div class="form-group">
+                <label for="size">Select a Size</label>
+                <select class="form-control" id="size" name="size">
+                    {% for i in prices %}
+                    <option value="{{ i.size }}">{{ i }}</option>
+                    {% endfor %}
+                </select>
             </div>
-    </div>
+            <div class="form-group">
+                <label for="quantity">Select a Quantity</label>
+                <input class="form-control" type="number" value="{{ i.quantity }}" id="quantity" name="quantity" min="0">
+            </div>
+            <div class="form-group">
+                <p align="center"><button class="btn btn-primary">Add to Cart</button></p>
+            </div>
+        </form>
+
 </div>
 
 {% endblock %}

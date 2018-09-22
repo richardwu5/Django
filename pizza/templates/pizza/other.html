@@ -1,0 +1,23 @@
+{% extends "pizza/base.html" %}
+
+{% block body %}
+<div class="otheritem">
+    <h1>{{ name }}</h1>
+    {% if description != None %}
+    <p>{{ description }}</p>
+    {% endif %}
+
+    <p>{{ price }}</p>
+    <form action="{% url 'pizza:pizza' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="pk" value="{{ pk }}"/>
+        <input type="hidden" name="category" value="{{ category }}"/>
+        <div class="form-group">
+            <label for="quantity">Select a Quantity</label>
+            <input class="form-control" type="number" value="{{ i.quantity }}" id="quantity" name="quantity" min="0">
+        </div>
+        <p align="center"><button class="btn btn-primary">Add to Cart</button></p>
+    </form>
+</div>
+
+{% endblock %}

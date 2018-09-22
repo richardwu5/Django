@@ -1,99 +1,103 @@
 {% extends "pizza/base.html" %}
 
 {% block body %}
-<div class="container">
-	<h1>Hello, {{ user.username }}</h1>
-</div>
+<div class="top">
+	<div class="subheader">A Place for Pizza, Beer, and Football</div>
 
-<div class="container">
-	<div class="panel panel-primary">
-  		<div class="panel-heading">Specialty Pizzas</div>
-		<div class="panel-body">
+	<div class="category">
+		<h3>Specialty Pizzas</h3>
+		<div class="sizeandprice">
 			{% for i in spizza_prices %}
-			{{ i.size }} {{ i.price }}
-			{% endfor %}
-			{% for p in spizza %}
-			<a href="{% url 'pizza:specialty' name=p.name %}">
-			<div>
-				<h3>{{ p.name }}</h3>
-				<p>{{ p.description }}</p>
+			<div class="sizeandprices">
+				{{ i.size }} {{ i.price }}
 			</div>
-			</a>
+			{% endfor %}
+		</div>
+		<div class="row">
+			{% for p in spizza %}
+			<div class="col col-lg-4 menu4">
+				<a href="{% url 'pizza:specialty' pk=p.pk %}">
+					<h4>{{ p.name }}</h4>
+					<p>{{ p.description }}</p>
+				</a>
+			</div>
 			{% endfor %}
 		</div>
 	</div>
-</div>
 
-<div class="container">
-	<div class="panel panel-primary">
-  		<div class="panel-heading">
-			Create Your Own Pizza
+	<div class="category">
+		<h3>Create Your Own Pizza</h3>
+		<div class="createpizza">
+			<h4>{{ small }}</h4>
+			<h4>{{ medium }}</h4>
+			<h4>{{ large }}</h4>
+			<h4>{{ xlarge }}</h4>
 		</div>
-		<div class="panel-body">
-			<a href="{% url 'pizza:create' %}">
-				<h3>Create Now</h3>
-			</a>
-			<p>Small {{ small_price.pizza_price.price }} Each Additional Topping {{ small_price.topping_price.price }}</p>
-			<p>Medium {{ medium_price.pizza_price.price }} Each Additional Topping {{ medium_price.topping_price.price }}</p>
-			<p>Large {{ large_price.pizza_price.price }} Each Additional Topping {{ large_price.topping_price.price }}</p>
-			<p>X-Large {{ xlarge_price.pizza_price.price }} Each Additional Topping {{ xlarge_price.topping_price.price }}</p>
-		</div>
+
+		<a href="{% url 'pizza:create' %}">
+			<div class="create">
+				<h4>Create Now</h4>
+			</div>
+		</a>
 	</div>
 </div>
 
-<div class="container">
-	<div class="panel panel-primary">
-  		<div class="panel-heading">Calzones</div>
-		<div class="panel-body">
+<div class="bottom">
+	<div class="category">
+		<h3>Calzones</h3>
+		<div class="row">
 			{% for i in calzone %}
-			<h3>{{ i.name }}</h3>
-			<p>{{ i.description }} {{ i.price }}</p>
+			<div class="col col-lg-4 menu4">
+				<a href="{% url 'pizza:other' pk=i.pk %}">
+					<h4>{{ i.name }}</h4>
+					<p>{{ i.description }} {{ i.price }}</p>
+				</a>
+			</div>
 			{% endfor %}
 		</div>
 	</div>
-</div>
 
-<div class="container">
-	<div class="panel panel-primary">
-  		<div class="panel-heading">Hot "Stuft" Sandwiches</div>
-		<div class="panel-body">
+	<div class="category">
+		<h3>Hot "Stuft" Sandwiches</h3>
+		<div class="row">
 			{% for i in sandwich %}
-			<h3>{{ i.name }}</h3>
-			<p>{{ i.price }}</p>
+			<div class="col col-lg-4 menu4">
+				<a href="{% url 'pizza:other' pk=i.pk %}">
+					<h4>{{ i.name }}</h4>
+					<p>{{ i.price }}</p>
+				</a>
+			</div>
 			{% endfor %}
 		</div>
 	</div>
-</div>
 
-<div class="container">
-	<div class="panel panel-primary">
-  		<div class="panel-heading">Fresh Salads</div>
-		<div class="panel-body">
+	<div class="category">
+		<h3>Fresh Salads</h3>
+		<div class="row">
 			{% for i in salad %}
-			<h3>{{ i.name }}</h3>
-			<p>{{ i.description }} {{ i.price }}</p>
+			<div class="col col-lg-4 menu4">
+				<a href="{% url 'pizza:other' pk=i.pk %}">
+					<h4>{{ i.name }}</h4>
+					<p>{{ i.description }} {{ i.price }}</p>
+				</a>
+			</div>
 			{% endfor %}
 		</div>
 	</div>
-</div>
 
-<div class="container">
-	<div class="panel panel-primary">
-  		<div class="panel-heading">Appetizers</div>
-		<div class="panel-body">
+	<div class="category">
+		<h3>Appetizers</h3>
+		<div class="row">
 			{% for i in appetizer %}
-			<h3>{{ i.name }}</h3>
-			<p>{{ i.description }} {{ i.price }}</p>
+			<div class="col col-lg-4 menu4">
+				<a href="{% url 'pizza:other' pk=i.pk %}">
+					<h4>{{ i.name }}</h4>
+					<p>{% if i.description != None %}{{ i.description }}{% endif %} {{ i.price }}</p>
+				</a>
+			</div>
 			{% endfor %}
 		</div>
 	</div>
 </div>
 
-
-<div class="container">
-	<ul>
-		<li>Currently logged in as: {{ user.username }}</li>
-		<li><a href="{% url 'pizza:logout' %}">Logout</a></li>
-	</ul>
-</div>
 {% endblock %}
